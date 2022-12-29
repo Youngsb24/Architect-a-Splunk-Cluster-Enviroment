@@ -1,1 +1,1 @@
-# Architect-a-Splunk-Cluster-Enviroment
+# Architect Splunk Cluster Enviroment
