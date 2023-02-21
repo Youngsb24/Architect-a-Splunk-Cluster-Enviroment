@@ -27,3 +27,17 @@ I will configure the each instance in my linux terminal and add the Splunk Enter
 <br>
 <img src="https://imgur.com/5mCHQM8.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
+
+
+<h4>Step 3</h4>
+I will log into the GUI of the Manager node and set up my licensing as well as create the indexer cluster. Creating an indexer cluster will invole configure and connecting the Peer nodes and Cluster members to the license manager which will colacte with my Manager node on the same instance. In the backend if you want to know the functions of your component always check "server.conf" which will be in the directory of /splunk_home/etc/system/local. As you can see before implementing my license these are the default stanza and parameters, But after i added my license a new stanza populated showing my manager node now has a license. 
+
+<img src="https://imgur.com/YdGuYQh.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
+<img src="https://imgur.com/Wg9sp0Q.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
+<img src="https://imgur.com/Gf7Qbfs.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
