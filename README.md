@@ -50,7 +50,7 @@ Make the peers and cluster members as the license slaves/peers to the Manager no
 </br>
 
 <h6>Step 5</h6>
-Configure the indexer cluster in the frontend of the Cluster manager. Depending on your work enviroment this can be done in the backend as well. You'll follow the exact steps for each component except select the correct configurations for the specific component. The last image displays the successful connectivity of the indexer cluster
+Configure the indexer cluster in the frontend of the Cluster manager. Depending on your work enviroment this can be done in the backend as well. You'll follow the exact steps for each component except select the correct configurations for the specific component. The last image displays the successful connectivity of the indexer cluster on the Cluster manager interface.
 
 <img src="https://imgur.com/j07GE31.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
