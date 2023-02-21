@@ -41,3 +41,22 @@ I will log into the GUI of the Manager node and set up my licensing as well as c
 <img src="https://imgur.com/Gf7Qbfs.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
+<h5>Step 4</h5>
+Make the peers and cluster members as the license slaves/peers to the Manager node by clicking "change to peer" and adding the CM internal Ip with the splunkd port 8089
+
+<img src="https://imgur.com/0ImbmLe.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+<img src="https://imgur.com/Ic16k2l.png"  height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
+<h6>Step 5</h6>
+Configure the indexer cluster in the frontend of the Cluster manager. Depending on your work enviroment this can be done in the backend as well. You'll follow the exact steps for each component except select the correct configurations for the specific component. The last image displays the successful connectivity of the indexer cluster
+
+<img src="https://imgur.com/j07GE31.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+<img src="https://imgur.com/vzl0TWp.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+ 
+<img src="https://imgur.com/fasPuAx.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
