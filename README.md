@@ -23,14 +23,14 @@ I run my Splunk Server on AWS ec2. We will create 12 instances, note 9 instance 
 
 
 <h3>Step 2</h3>
-I will configure the each instance in my linux terminal and add the Splunk Enterprise License script and use the Universal Forwarder script soley and only for the UF.
+I will configure the instance in my linux terminal and add the Splunk Enterprise License script and use the Universal Forwarder script soley and only for the UF.
 <br>
 <img src="https://imgur.com/5mCHQM8.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
 
 <h4>Step 3</h4>
-I will log into the GUI of the Manager node and set up my licensing as well as create the indexer cluster. Creating an indexer cluster will invole configure and connecting the Peer nodes and Cluster members to the license manager which will colacte with my Manager node on the same instance. In the backend if you want to know the functions of your component always check "server.conf" which will be in the directory of /splunk_home/etc/system/local. As you can see before implementing my license these are the default stanza and parameters, But after i added my license a new stanza populated showing my manager node now has a license. 
+I will log into the GUI of the Manager node and set up my licensing as well as create the indexer cluster. Creating an indexer cluster will involve configuring and connecting the Peer nodes and Cluster members to the license manager, which will colocate with my Manager node on the same instance. In the backend, if you want to know the functions of your component, always check "server.conf" which will be in the directory of /splunk_home/etc/system/local. As you can see before implementing my license, these are the default stanza and parameters. But after i added my license, a new stanza populated showing my manager node now has a license. 
 
 <img src="https://imgur.com/YdGuYQh.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
@@ -50,7 +50,7 @@ Make the peers and cluster members as the license slaves/peers to the Manager no
 </br>
 
 <h6>Step 5</h6>
-Configure the indexer cluster in the frontend of the Cluster manager. Depending on your work enviroment this can be done in the backend as well. You'll follow the exact steps for each component except select the correct configurations for the specific component. The last image displays the successful connectivity of the indexer cluster on the Cluster manager interface.
+Configure the indexer cluster in the frontend of the Cluster manager. Depending on your work environment, this can be done in the backend as well. You'll follow the exact steps for each component except select the correct configurations for the specific component. The last image displays the successful connectivity of the indexer cluster on the Cluster manager interface.
 
 <img src="https://imgur.com/j07GE31.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
