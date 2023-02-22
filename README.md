@@ -16,10 +16,6 @@ I run my Splunk Server on AWS ec2. We will create 12 instances, note 9 instance 
 <img src="https://imgur.com/JyZaCih.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
-<br>
-<img src="https://imgur.com/LXgzmyE.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
-</br>
-
 
 
 <h3>Step 2</h3>
@@ -59,4 +55,20 @@ Configure the indexer cluster in the frontend of the Cluster manager. Depending 
  
 <img src="https://imgur.com/fasPuAx.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
+
+<h7>Step 6</h7>
+We are going to configure a TCP input on all indexers to recieve logs from the other nodes. The path will be /opt/splunk/etc/system/local then you will "vi inputs.conf" and paste this stanza with the parameter.
+
+<img src="https://imgur.com/jDi0bX6.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
+<h8>Step 7</h8>
+Time to configure the Universal forwarder . Since the UF doesn't have a GUI everything will be done in the backend of the nodes. "cd /opt/splunk/etc/system/local then vi outputs.conf " here we will create a stanza to help the UF determine where to send the data to. You can as well create outputs.conf on every component except the indexers, send each components internal logs to the indexer with the stanza in the second image. Make sure you include all indexers internal IP address where it says "server"
+
+<img src="https://imgur.com/yd3SL4T.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
+<img src="https://imgur.com/undefined.png"  height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
 
