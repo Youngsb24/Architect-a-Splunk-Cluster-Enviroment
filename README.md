@@ -75,3 +75,8 @@ Time to configure the Universal forwarder . Since the UF doesn't have a GUI ever
 </br>
 
 
+<h9>Step 9</h9>
+Once you've sent the CM , cluster members and Universal forwarders internal logs to the indexer, log into one of the SH GUI and run this search to ensure the indexer are receiving each componentns logs.
+
+<img src="https://imgur.com/LuvH6ta.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
