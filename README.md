@@ -58,15 +58,14 @@ Configure the indexer cluster in the frontend of the Cluster manager. Depending 
 </br>
 
 <h7>Step 6</h7>
-
-We are going to configure a TCP input on all indexers to recieve logs from the other nodes. The path will be /opt/splunk/etc/system/local then you will "vi inputs.conf" and paste this stanza with the parameter.
+We are going to configure a TCP input on all indexers to receive logs from the other nodes. The path will be /opt/Splunk/etc/system/local then you will "vi inputs. conf" and paste this stanza with the parameter.
 
 <img src="https://imgur.com/jDi0bX6.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
 <h8>Step 7</h8>
 
-Time to configure the Universal forwarder . Since the UF doesn't have a GUI everything will be done in the backend of the nodes. "cd /opt/splunk/etc/system/local then vi outputs.conf " here we will create a stanza to help the UF determine where to send the data to. You can as well create outputs.conf on every component except the indexers, send each components internal logs to the indexer with the stanza in the second image. Make sure you include all indexers internal IP address where it says "server"
+Time to configure the Universal forwarder. Since the UF doesn't have a GUI everything will be done in the backend of the nodes. "cd /opt/Splunk/etc/system/local then vi outputs.conf " here we will create a stanza to help the UF determine where to send the data to. You can as well create outputs. conf on every component except the indexers, and send each component's internal logs to the indexer with the stanza in the second image. Make sure you include all indexers internal IP addresses where it says "server"
 
 <img src="https://imgur.com/yd3SL4T.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
@@ -76,13 +75,14 @@ Time to configure the Universal forwarder . Since the UF doesn't have a GUI ever
 
 
 <h9>Step 8</h9>
-Once you've sent the CM , cluster members and Universal forwarders internal logs to the indexer, log into one of the SH GUI and run this search to ensure the indexer are receiving each componentns logs.
+Once you've sent the CM , cluster members, and Universal forwarders internal logs to the indexer, log into one of the SH GUI and run this search to ensure the indexer is receiving each components logs.
 
 <img src="https://imgur.com/LuvH6ta.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
 
 <h10>Step 9</h10>
+
 Configure the deployer in the backend and add the stanza for license and configure the shclustering
 
 <img src="https://imgur.com/sEPYiLX.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
