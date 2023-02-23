@@ -46,6 +46,7 @@ Make the peers and cluster members as the license slaves/peers to the Manager no
 </br>
 
 <h6>Step 5</h6>
+
 Configure the indexer cluster in the frontend of the Cluster manager. Depending on your work environment, this can be done in the backend as well. You'll follow the exact steps for each component except select the correct configurations for the specific component. The last image displays the successful connectivity of the indexer cluster on the Cluster manager interface.
 
 <img src="https://imgur.com/j07GE31.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -57,12 +58,14 @@ Configure the indexer cluster in the frontend of the Cluster manager. Depending 
 </br>
 
 <h7>Step 6</h7>
+
 We are going to configure a TCP input on all indexers to recieve logs from the other nodes. The path will be /opt/splunk/etc/system/local then you will "vi inputs.conf" and paste this stanza with the parameter.
 
 <img src="https://imgur.com/jDi0bX6.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
 <h8>Step 7</h8>
+
 Time to configure the Universal forwarder . Since the UF doesn't have a GUI everything will be done in the backend of the nodes. "cd /opt/splunk/etc/system/local then vi outputs.conf " here we will create a stanza to help the UF determine where to send the data to. You can as well create outputs.conf on every component except the indexers, send each components internal logs to the indexer with the stanza in the second image. Make sure you include all indexers internal IP address where it says "server"
 
 <img src="https://imgur.com/yd3SL4T.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
