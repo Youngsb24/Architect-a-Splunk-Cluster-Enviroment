@@ -68,7 +68,7 @@ Time to configure the Universal forwarder . Since the UF doesn't have a GUI ever
 <img src="https://imgur.com/yd3SL4T.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
-<img src="https://imgur.com/undefined.png"  height="40%" width="40%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/VmGvCRo.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
 
