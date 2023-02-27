@@ -28,20 +28,25 @@ I will configure the instance in my linux terminal and add the Splunk Enterprise
 <h4>Step 3</h4>
 I will log into the GUI of the Manager node and set up my licensing as well as create the indexer cluster. Creating an indexer cluster will involve configuring and connecting the Peer nodes and Cluster members to the license manager, which will colocate with my Manager node on the same instance. In the backend, if you want to know the functions of your component, always check "server.conf" which will be in the directory of /splunk_home/etc/system/local. As you can see before implementing my license, these are the default stanza and parameters. But after i added my license, a new stanza populated showing my manager node now has a license. 
 
+<br>
 <img src="https://imgur.com/YdGuYQh.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
+<br>
 <img src="https://imgur.com/Wg9sp0Q.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
+<br>
 <img src="https://imgur.com/Gf7Qbfs.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
 <h5>Step 4</h5>
 Make the peers and cluster members as the license slaves/peers to the Manager node by clicking "change to peer" and adding the CM internal Ip with the splunkd port 8089
 
+<br>
 <img src="https://imgur.com/0ImbmLe.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
+<br>
 <img src="https://imgur.com/Ic16k2l.png"  height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
@@ -49,11 +54,14 @@ Make the peers and cluster members as the license slaves/peers to the Manager no
 
 Configure the indexer cluster in the frontend of the Cluster manager. Depending on your work environment, this can be done in the backend as well. You'll follow the exact steps for each component except select the correct configurations for the specific component. The last image displays the successful connectivity of the indexer cluster on the Cluster manager interface.
 
+<br>
 <img src="https://imgur.com/j07GE31.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
+<br>
 <img src="https://imgur.com/vzl0TWp.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
  
+<br>
 <img src="https://imgur.com/fasPuAx.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
@@ -67,9 +75,11 @@ We are going to configure a TCP input on all indexers to receive logs from the o
 
 Time to configure the Universal forwarder. Since the UF doesn't have a GUI everything will be done in the backend of the nodes. "cd /opt/Splunk/etc/system/local then vi outputs.conf " here we will create a stanza to help the UF determine where to send the data to. You can as well create outputs. conf on every component except the indexers, and send each component's internal logs to the indexer with the stanza in the second image. Make sure you include all indexers internal IP addresses where it says "server"
 
+<br>
 <img src="https://imgur.com/yd3SL4T.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
+<br>
 <img src="https://imgur.com/VmGvCRo.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
@@ -77,7 +87,8 @@ Time to configure the Universal forwarder. Since the UF doesn't have a GUI every
 <h9>Step 8</h9>
 Once you've sent the CM , cluster members, and Universal forwarders internal logs to the indexer, log into one of the SH GUI and run this search to ensure the indexer is receiving each components logs.
 
-<img src="https://imgur.com/LuvH6ta.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+<br>
+<img src=https://imgur.com/GJd3oNT.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
 
@@ -85,8 +96,47 @@ Once you've sent the CM , cluster members, and Universal forwarders internal log
 
 Configure the deployer in the backend and add the stanza for license and configure the shclustering
 
+<br>
 <img src="https://imgur.com/sEPYiLX.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br>
 
 <h11>Step 10</h11>
 
+After configuring the Deployer to communicate with the Cluster members , we want to bootstrap the captain to make one of the members a designated captain by running the commands displayed in the image which will include all of the cluster members internal IP. As you can see i ran the " show shcluster-status" to provide me information about who is the captain and the status of all my cluster members.
+
+<br>
+<img src="https://imgur.com/Sl4G4HO.png"  height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
+<br>
+<img src="https://imgur.com/X8CCj68.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
+<h12>Step 11</h12>
+
+We will configure the monitoring Console so we change the topology of Splunk enterprise deployment from standalone to Distributed. Add the necesarry components in "distributed search" page and add their internal IP.
+
+<br>
+<img src="https://imgur.com/lJ7sadW.png"  height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
+<br>
+<img src="https://imgur.com/ZCmJrTR.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
+<br>
+<img src="https://imgur.com/QIXgYpu.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br>
+
+<br>
+<img src="https://imgur.com/2LOLAaX.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br> 
+
+
+<h13>Step 12</h13>
+
+I'll configure my Universal Forwarders to become deployment clients for the Deployment Server so they can phone home by running a simple command on all of my forwarders. Always restart the instance after you push a configuration. In a work enviroment thats not best practice, in a work enviroment you must request permission to restart anything!!
+
+<br>
+<img src="https://imgur.com/S5mpyX4.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br> 
