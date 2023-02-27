@@ -73,7 +73,7 @@ We are going to configure a TCP input on all indexers to receive logs from the o
 
 <h8>Step 7</h8>
 
-Time to configure the Universal forwarder. Since the UF doesn't have a GUI everything will be done in the backend of the nodes. "cd /opt/Splunk/etc/system/local then vi outputs.conf " here we will create a stanza to help the UF determine where to send the data to. You can as well create outputs. conf on every component except the indexers, and send each component's internal logs to the indexer with the stanza in the second image. Make sure you include all indexers internal IP addresses where it says "server"
+Time to configure the Universal forwarder. Since the UF doesn't have a GUI everything will be done in the backend of the nodes. "cd /opt/Splunk/etc/system/local then vi outputs.conf " here we will create a stanza to help the UF determine where to send the data to. You can as well create outputs. conf on every component except the indexers, and send each component's internal logs to the indexer with the stanza in the second image. Make sure you include all indexers' internal IP addresses where it says "server"
 
 <br>
 <img src="https://imgur.com/yd3SL4T.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -85,7 +85,7 @@ Time to configure the Universal forwarder. Since the UF doesn't have a GUI every
 
 
 <h9>Step 8</h9>
-Once you've sent the CM , cluster members, and Universal forwarders internal logs to the indexer, log into one of the SH GUI and run this search to ensure the indexer is receiving each components logs.
+Once you've sent the CM, cluster members, and Universal forwarder's internal logs to the indexer, log into one of the SH GUI and run this search to ensure the indexer is receiving each component's logs.
 
 <br>
 <img src=https://imgur.com/GJd3oNT.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -102,7 +102,7 @@ Configure the deployer in the backend and add the stanza for license and configu
 
 <h11>Step 10</h11>
 
-After configuring the Deployer to communicate with the Cluster members , we want to bootstrap the captain to make one of the members a designated captain by running the commands displayed in the image which will include all of the cluster members internal IP. As you can see i ran the " show shcluster-status" to provide me information about who is the captain and the status of all my cluster members.
+After configuring the Deployer to communicate with the Cluster members, we want to bootstrap the captain to make one of the members a designated captain by running the commands displayed in the image which will include all of the cluster member's internal IP. As you can see I ran the " show shcluster-status" to provide me information about who is the captain and the status of all my cluster members.
 
 <br>
 <img src="https://imgur.com/Sl4G4HO.png"  height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -114,7 +114,7 @@ After configuring the Deployer to communicate with the Cluster members , we want
 
 <h12>Step 11</h12>
 
-We will configure the monitoring Console so we change the topology of Splunk enterprise deployment from standalone to Distributed. Add the necesarry components in "distributed search" page and add their internal IP.
+We will configure the monitoring Console so we change the topology of Splunk enterprise deployment from standalone to Distributed. Add the necessary components in the "distributed search" page and add their internal IP.
 
 <br>
 <img src="https://imgur.com/lJ7sadW.png"  height="40%" width="40%" alt="Disk Sanitization Steps"/>
@@ -135,8 +135,20 @@ We will configure the monitoring Console so we change the topology of Splunk ent
 
 <h13>Step 12</h13>
 
-I'll configure my Universal Forwarders to become deployment clients for the Deployment Server so they can phone home by running a simple command on all of my forwarders. Always restart the instance after you push a configuration. In a work enviroment thats not best practice, in a work enviroment you must request permission to restart anything!!
+I'll configure my Universal Forwarders to become deployment clients for the Deployment Server so they can phone home by running a simple command on all of my forwarders. Always restart the instance after you push a configuration. In a work environment that, not the best practice, in a work environment you must request permission to restart anything!!
 
 <br>
 <img src="https://imgur.com/S5mpyX4.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </br> 
+
+<h14>Step 13</h14>
+
+We will configure the deployment server to send its internal logs or any data consumed to the forwarders. Since this is the configuration management for the forwards the path we will be dealing with is "/opt/Splunk/etc/deployment-apps". The majority of our configuration changes will be made here.
+
+<br>
+<img src="https://imgur.com/D1scLZG.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</br> 
+
+
+
+Thas how you confiugre a basic Clustererd enviroment with 1 cm 3 SH 3 indexers 3 UF 1 Deployer 1 Deployment server and license manager. I will provide more repositories for bringing in data , installing apps , updating configurations , using SPL etc....
