@@ -151,4 +151,4 @@ We will configure the deployment server to send its internal logs or any data co
 
 
 
-Thas how you confiugre a basic Clustererd enviroment with 1 Cluster Manager 3 SH 3 indexers 3 UF 1 Deployer 1 Deployment server and license manager. I will provide more repositories for bringing in data , installing apps , updating configurations , using SPL etc....
+
